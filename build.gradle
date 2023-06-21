@@ -27,6 +27,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation 'org.json:json:20210307'
+    // SQLite JDBC 드라이버 의존성 추가
+    implementation 'org.xerial:sqlite-jdbc:3.34.0'
 }
 
 test {
