@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="commit main과 합치기">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/Delete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/Sqlite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/searchWifi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" afterDir="false" />
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[sqlite] db 저장 및 조회 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/SearchHistoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/SearchHistoryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/ShowWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/ShowWifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/searchWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/searchWifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +152,9 @@
       <workItem from="1687348587116" duration="6475000" />
       <workItem from="1687355156916" duration="90000" />
       <workItem from="1687355254656" duration="1843000" />
+      <workItem from="1687359160617" duration="57000" />
+      <workItem from="1687392403488" duration="187000" />
+      <workItem from="1687392592999" duration="3913000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -169,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687180237471</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[sqlite] db 저장 및 조회 구현">
+      <created>1687359196490</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687359196490</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +178,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[feature]first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature]first commit" />
+    <MESSAGE value="[sqlite] db 저장 및 조회 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="[sqlite] db 저장 및 조회 구현" />
   </component>
 </project>
