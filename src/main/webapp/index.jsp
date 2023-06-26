@@ -9,12 +9,12 @@
 
 <a href="/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/">홈</a>
 <span>|</span>
-<a href="search-history">위치 히스토리 목록</a>
+<a href="front-controller/search-history">위치 히스토리 목록</a>
 <span>|</span>
-<a href="download-wifi">OPEN API 와이파이 정보 가져오기</a>
+<a href="front-controller/download-wifi">OPEN API 와이파이 정보 가져오기</a>
 <span>|</span>
 <a href="sqlite-test">sqlite test</a>
-<form action="show-nearbyWifi-20" method="post">
+<form action="front-controller/show-nearbyWifi-20" method="post">
   LAT: <input type="number" step="any" id="lat" name="LAT" />
   LNT: <input type="number" step="any" id="lnt" name="LNT" />
   <button type="submit">근처 와이파이 정보 보기</button>

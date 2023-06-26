@@ -4,7 +4,7 @@
 <head>
     <script>
         function deleteRow(id) {
-            fetch('/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/delete?id=' + id, { method: 'POST' })
+            fetch('/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/front-controller/delete?id=' + id, { method: 'POST' })
                 .then(response => {
                     if (!response.ok) throw new Error('Deletion failed');
                     return response.text();

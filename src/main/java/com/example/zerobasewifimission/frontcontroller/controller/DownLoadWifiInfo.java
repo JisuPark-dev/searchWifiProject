@@ -1,20 +1,19 @@
-package com.example.zerobasewifimission.controller;
+package com.example.zerobasewifimission.frontcontroller.controller;
 
+import com.example.zerobasewifimission.frontcontroller.Controller;
 import com.example.zerobasewifimission.repository.WifiInfoRepository;
 import org.json.JSONArray;
 
-import java.io.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-//open api 와이파이 정보 가져외
-@WebServlet(name = "downLoadWifi", urlPatterns = "/download-wifi")
-public class DownLoadWifiInfo extends HttpServlet {
+public class DownLoadWifiInfo implements Controller {
     WifiInfoRepository wifiInfoRepository = WifiInfoRepository.getInstance();
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String viewPath = "/WEB-INF/views/DownLoadWifiInfo.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);
