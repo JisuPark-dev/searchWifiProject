@@ -77,7 +77,6 @@ public class WifiInfoRepository {
             String LNT = row.getString("LNT");
             String WORK_DTTM = row.getString("WORK_DTTM");
 
-
             //데이터베이스에 저장
             Connection conn = null;
             try {
@@ -117,9 +116,7 @@ public class WifiInfoRepository {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
                 System.out.println(cnt+"번째 데이터가 성공적으로 삽입되었습니다.");
-
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             } finally {
@@ -173,7 +170,6 @@ public class WifiInfoRepository {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
         return wifiInfoList;
     }
 }

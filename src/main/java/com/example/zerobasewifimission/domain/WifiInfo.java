@@ -26,7 +26,7 @@ public class WifiInfo {
     public WifiInfo() {
     }
 
-    public WifiInfo(double distance, String id, String region, String name, String address1, String address2, String floor, String installType, String installMby, String serviceType, String cmcwr, String installYear, String inout, String remarks3, String lat, String lnt, String workTime) {
+    public WifiInfo(double distance, String id, String region, String name, String address1, String address2, String floor, String installType, String installMby, String serviceType, String cmcwr, String installYear, String inout, String remars3, String lat, String lnt, String workTime) {
         this.distance = distance;
         this.id = id;
         this.region = region;

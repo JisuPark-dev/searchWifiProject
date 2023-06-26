@@ -1,4 +1,4 @@
-package com.example.zerobasewifimission;
+package com.example.zerobasewifimission.controller;
 
 import com.example.zerobasewifimission.repository.SearchHistoryRepository;
 
@@ -12,7 +12,6 @@ import java.io.IOException;
 @WebServlet(name = "delete", urlPatterns = "/delete")
 public class DeleteSearchHistory extends HttpServlet {
     private SearchHistoryRepository searchHistoryRepository = SearchHistoryRepository.getInstance();
-
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] 내 위치 찾기 + 위치 기반 가까운 와이파이 20개 찾기 구현">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/domain/SearchHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/SearchHistoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/test.java" afterDir="false" />
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] domain, repository 리펙토링&#10;ShowNearByWifi, SearchHistoryList, DownLoadWifiInfo, DeleteSearchHistory 구현">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/Delete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/DeleteSearchHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/SearchHistoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/SearchHistoryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/ShowWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/DownLoadWifiInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/searchWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/searchWifi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/ShowNearByWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/ShowNearByWifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/domain/WifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/domain/WifiInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/WifiInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/WifiInfoRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +162,12 @@
       <workItem from="1687509755988" duration="538000" />
       <workItem from="1687568757183" duration="681000" />
       <workItem from="1687569466183" duration="559000" />
+      <workItem from="1687570032183" duration="14140000" />
+      <workItem from="1687599661887" duration="495000" />
+      <workItem from="1687602061159" duration="101000" />
+      <workItem from="1687610324109" duration="35000" />
+      <workItem from="1687693648958" duration="6000" />
+      <workItem from="1687746445491" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -189,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687397605361</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[feature] domain, repository 리펙토링&#10;ShowNearByWifi, SearchHistoryList, DownLoadWifiInfo, DeleteSearchHistory 구현">
+      <created>1687593997076</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687593997076</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +207,7 @@
     <MESSAGE value="[feature]first commit" />
     <MESSAGE value="[sqlite] db 저장 및 조회 구현" />
     <MESSAGE value="[feature] 내 위치 찾기 + 위치 기반 가까운 와이파이 20개 찾기 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] 내 위치 찾기 + 위치 기반 가까운 와이파이 20개 찾기 구현" />
+    <MESSAGE value="[feature] domain, repository 리펙토링&#10;ShowNearByWifi, SearchHistoryList, DownLoadWifiInfo, DeleteSearchHistory 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] domain, repository 리펙토링&#10;ShowNearByWifi, SearchHistoryList, DownLoadWifiInfo, DeleteSearchHistory 구현" />
   </component>
 </project>

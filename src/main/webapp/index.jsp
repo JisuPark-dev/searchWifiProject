@@ -11,10 +11,10 @@
 <span>|</span>
 <a href="search-history">위치 히스토리 목록</a>
 <span>|</span>
-<a href="show-wifi">OPEN API 와이파이 정보 가져오기</a>
+<a href="download-wifi">OPEN API 와이파이 정보 가져오기</a>
 <span>|</span>
 <a href="sqlite-test">sqlite test</a>
-<form action="searchWifi-20" method="post">
+<form action="show-nearbyWifi-20" method="post">
   LAT: <input type="number" step="any" id="lat" name="LAT" />
   LNT: <input type="number" step="any" id="lnt" name="LNT" />
   <button type="submit">근처 와이파이 정보 보기</button>
@@ -50,15 +50,11 @@
       alert("Geolocation is not supported by this browser.");
     }
   }
-
   function fillFormWithPosition(position) {
     document.getElementById('lat').value = position.coords.latitude;
     document.getElementById('lnt').value = position.coords.longitude;
   }
 </script>
-
-
-
 </body>
 </html>
 
