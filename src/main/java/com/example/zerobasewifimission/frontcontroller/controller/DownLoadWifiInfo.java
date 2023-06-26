@@ -1,39 +1,48 @@
 package com.example.zerobasewifimission.frontcontroller.controller;
 
 import com.example.zerobasewifimission.frontcontroller.Controller;
+import com.example.zerobasewifimission.frontcontroller.MyView;
 import com.example.zerobasewifimission.repository.WifiInfoRepository;
 import org.json.JSONArray;
+import org.json.JSONException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public class DownLoadWifiInfo implements Controller {
     WifiInfoRepository wifiInfoRepository = WifiInfoRepository.getInstance();
+
     @Override
-    public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/views/DownLoadWifiInfo.jsp";
-        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
+    public MyView process(HttpServletRequest request, HttpServletResponse response) {
+        MyView view = new MyView("/WEB-INF/views/DownLoadWifiInfo.jsp");
 
-        int startIdx=1;
-        int endIdx = 1000;
-        int cnt = 1;
+        try {
+            int startIdx = 1;
+            int endIdx = 1000;
+            int cnt = 1;
+            String jsonString;
 
-        while (wifiInfoRepository.getWifiInfoFromApi(startIdx, endIdx).length()!=0){
-            // 데이터 1000개씩 받기
-            String jsonString = wifiInfoRepository.getWifiInfoFromApi(startIdx, endIdx);
+            while (!(jsonString = wifiInfoRepository.getWifiInfoFromApi(startIdx, endIdx)).equals("failed to get response")) {
+                JSONArray rows;
+                try {
+                    //받은 데이터 파싱하기
+                    rows = wifiInfoRepository.parseWifiInfo(jsonString);
+                } catch (JSONException e) {
+                    System.err.println("Error while parsing JSON data: " + e.getMessage());
+                    break;
+                }
 
-            //받은 데이터 파싱하기
-            JSONArray rows = wifiInfoRepository.parseWifiInfo(jsonString);
+                //db에 데이터 저장
+                wifiInfoRepository.saveWifiInfo(cnt, rows);
 
-            //db에 데이터 저장
-            wifiInfoRepository.saveWifiInfo(cnt, rows);
-            startIdx+=1000;
-            endIdx+=1000;
-            cnt+=1000;
+                startIdx += 1000;
+                endIdx += 1000;
+                cnt += 1000;
+            }
+        } catch (Exception e) {
+            System.err.println("An error occurred during the Wi-Fi data processing: " + e.getMessage());
         }
+
+        return view;
     }
 }

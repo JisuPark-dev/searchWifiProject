@@ -1,6 +1,7 @@
 package com.example.zerobasewifimission.frontcontroller.controller;
 
 import com.example.zerobasewifimission.frontcontroller.Controller;
+import com.example.zerobasewifimission.frontcontroller.MyView;
 import com.example.zerobasewifimission.repository.SearchHistoryRepository;
 
 import javax.servlet.ServletException;
@@ -11,7 +12,7 @@ import java.io.IOException;
 public class DeleteSearchHistory implements Controller {
     private SearchHistoryRepository searchHistoryRepository = SearchHistoryRepository.getInstance();
     @Override
-    public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id"); // 요청 파라미터에서 id 값을 가져옵니다.
 
         if (id != null && !id.isEmpty()) {
@@ -22,5 +23,6 @@ public class DeleteSearchHistory implements Controller {
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
         }
+        return new MyView("/WEB-INF/views/DeleteSearchHistory.jsp");
     }
 }

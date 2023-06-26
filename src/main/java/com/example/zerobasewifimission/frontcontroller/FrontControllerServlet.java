@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-//frontController에서 공통적인 부분 처리 + Controller interface를 통해서 controller형식 통일
+//frontController에서 공통적인 부분 처리 + map에서 찾아서 있으면 매핑해줌+Controller interface를 통해서 controller형식 통일
 @WebServlet(name = "frontControllerServlet", urlPatterns = "/front-controller/*")
 public class FrontControllerServlet extends HttpServlet {
     private Map<String, Controller> controllerMap = new HashMap<>();
@@ -34,6 +34,7 @@ public class FrontControllerServlet extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        controller.process(request, response);
+        MyView view = controller.process(request, response);
+        view.render(request, response);
     }
 }
