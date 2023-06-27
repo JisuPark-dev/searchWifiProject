@@ -1,9 +1,6 @@
 package com.example.zerobasewifimission.frontcontroller;
 
-import com.example.zerobasewifimission.frontcontroller.controller.DeleteSearchHistory;
-import com.example.zerobasewifimission.frontcontroller.controller.DownLoadWifiInfo;
-import com.example.zerobasewifimission.frontcontroller.controller.SearchHistoryList;
-import com.example.zerobasewifimission.frontcontroller.controller.ShowNearByWifi;
+import com.example.zerobasewifimission.frontcontroller.controller.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,35 +12,45 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-//frontController에서 공통적인 부분 처리 + map에서 찾아서 있으면 매핑해줌+Controller interface를 통해서 controller형식 통일
-//ModelView를 통해서 servlet의존성 제거
+// frontController에서 공통적인 부분 처리 1)map에서 찾아서 있으면 매핑해줌 2)Controller interface를 통해서 controller형식 통일
+// 3) ViewResolver 사용 4) render(model)호출
+// ModelView를 통해서 메시지 주고받음. Controller의 Servlet 의존성 제거.
 @WebServlet(name = "frontControllerServlet", urlPatterns = "/front-controller/*")
 public class FrontControllerServlet extends HttpServlet {
     private Map<String, Controller> controllerMap = new HashMap<>();
 
     public FrontControllerServlet() {
-        controllerMap.put("/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/front-controller/delete", new DeleteSearchHistory());
-        controllerMap.put("/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/front-controller/download-wifi", new DownLoadWifiInfo());
-        controllerMap.put("/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/front-controller/search-history", new SearchHistoryList());
-        controllerMap.put("/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/front-controller/show-nearbyWifi-20", new ShowNearByWifi());
+        controllerMap.put("/front-controller/delete", new DeleteSearchHistory());
+        controllerMap.put("/front-controller/download-wifi", new DownLoadWifiInfo());
+        controllerMap.put("/front-controller/search-history", new SearchHistoryList());
+        controllerMap.put("/front-controller/show-nearbyWifi-20", new ShowNearByWifi());
+        controllerMap.put("/front-controller/wifi-detail", new WifiDetail());
+        controllerMap.put("/front-controller/show-bookmark", new ShowBookmark());
+        controllerMap.put("/front-controller/manage-bookmark", new ManageBookmark());
     }
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String requestURI = request.getRequestURI();
-        Controller controller = controllerMap.get(requestURI);
+        Controller controller = getController(request);
         if (controller == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
         Map<String, String> paramMap = createParamMap(request);
-        ModelView mv = controller.process(paramMap);
+        Map<String, Object> model = new HashMap<>();
+        String viewName = controller.process(paramMap, model);
 
-        String viewName = mv.getViewName();
         MyView view = viewResolver(viewName);
-        view.render(mv.getModel(), request, response);
+        view.render(model, request, response);
     }
+
+    private Controller getController(HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        Controller controller = controllerMap.get(requestURI);
+        return controller;
+    }
+
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         Enumeration<String> parameterNames = request.getParameterNames();

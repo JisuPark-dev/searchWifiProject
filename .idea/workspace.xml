@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/ModelView.java" afterDir="false" />
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/MyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/MyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" afterDir="false" />
@@ -185,6 +183,12 @@
       <workItem from="1687777909629" duration="155000" />
       <workItem from="1687780457096" duration="287000" />
       <workItem from="1687785501290" duration="4686000" />
+      <workItem from="1687827949283" duration="145000" />
+      <workItem from="1687828825330" duration="300000" />
+      <workItem from="1687829444555" duration="199000" />
+      <workItem from="1687833068078" duration="87000" />
+      <workItem from="1687834092554" duration="319000" />
+      <workItem from="1687835396443" duration="674000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687777494224</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음.">
+      <created>1687827991611</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687827991611</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +260,7 @@
     <MESSAGE value="[feature] 기존 servlet으로 작성된 코드를 -&gt; jsp - controller, view로 분리하는 작업&#10;DownLoadWifiInfo.jsp, SearchHistoryList.jsp, ShowNearByWifi.jsp 구현" />
     <MESSAGE value="[feature] FrontControllerServlet 1차 구현" />
     <MESSAGE value="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거" />
+    <MESSAGE value="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음." />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음." />
   </component>
 </project>

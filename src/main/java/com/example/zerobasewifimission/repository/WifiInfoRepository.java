@@ -172,4 +172,37 @@ public class WifiInfoRepository {
         }
         return wifiInfoList;
     }
+
+    public WifiInfo getWifiDetail(String id) {
+        WifiInfo wifi = null;
+        try (Connection conn = DriverManager.getConnection(WIFI_API_URL);
+             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM wifi WHERE id = ?")) {
+
+            pstmt.setString(1, id);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+
+                wifi = new WifiInfo();
+                wifi.setId(rs.getString("id"));
+                wifi.setRegion(rs.getString("region"));
+                wifi.setName(rs.getString("name"));
+                wifi.setAddress1(rs.getString("address1"));
+                wifi.setAddress2(rs.getString("address2"));
+                wifi.setFloor(rs.getString("floor"));
+                wifi.setInstallType(rs.getString("install_type"));
+                wifi.setInstallMby(rs.getString("install_mby"));
+                wifi.setServiceType(rs.getString("service_type"));
+                wifi.setCmcwr(rs.getString("cmcwr"));
+                wifi.setInstallYear(rs.getString("install_year"));
+                wifi.setInout(rs.getString("inout"));
+                wifi.setRemars3(rs.getString("remars3"));
+                wifi.setLat(rs.getString("lat"));
+                wifi.setLnt(rs.getString("lnt"));
+                wifi.setWorkTime(rs.getString("work_time"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return wifi;
+    }
 }

@@ -7,13 +7,15 @@
 <body>
 <h1><%= "와이파이 정보 구하기" %></h1>
 
-<a href="/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war/">홈</a>
+<a href="/">홈</a>
 <span>|</span>
 <a href="front-controller/search-history">위치 히스토리 목록</a>
 <span>|</span>
 <a href="front-controller/download-wifi">OPEN API 와이파이 정보 가져오기</a>
 <span>|</span>
-<a href="sqlite-test">sqlite test</a>
+<a href="front-controller/show-bookmark">북마크 보기</a>
+<span>|</span>
+<a href="front-controller/manage-bookmark">북마크 그룹 관리</a>
 <form action="front-controller/show-nearbyWifi-20" method="post">
   LAT: <input type="number" step="any" id="lat" name="LAT" />
   LNT: <input type="number" step="any" id="lnt" name="LNT" />
