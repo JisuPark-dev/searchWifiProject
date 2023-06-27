@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
 //frontController에서 공통적인 부분 처리 + map에서 찾아서 있으면 매핑해줌+Controller interface를 통해서 controller형식 통일
+//ModelView를 통해서 servlet의존성 제거
 @WebServlet(name = "frontControllerServlet", urlPatterns = "/front-controller/*")
 public class FrontControllerServlet extends HttpServlet {
     private Map<String, Controller> controllerMap = new HashMap<>();
@@ -34,7 +36,25 @@ public class FrontControllerServlet extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        MyView view = controller.process(request, response);
-        view.render(request, response);
+
+        Map<String, String> paramMap = createParamMap(request);
+        ModelView mv = controller.process(paramMap);
+
+        String viewName = mv.getViewName();
+        MyView view = viewResolver(viewName);
+        view.render(mv.getModel(), request, response);
+    }
+    private Map<String, String> createParamMap(HttpServletRequest request) {
+        Map<String, String> paramMap = new HashMap<>();
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            paramMap.put(paramName, request.getParameter(paramName));
+        }
+        return paramMap;
+    }
+
+    private MyView viewResolver(String viewName) {
+        return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 }

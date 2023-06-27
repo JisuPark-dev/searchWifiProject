@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] FrontControllerServlet 1차 구현">
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/ModelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/MyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/MyView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowNearByWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowNearByWifi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -174,6 +181,10 @@
       <workItem from="1687764023300" duration="2264000" />
       <workItem from="1687766293787" duration="1046000" />
       <workItem from="1687767618442" duration="46000" />
+      <workItem from="1687772129297" duration="5599000" />
+      <workItem from="1687777909629" duration="155000" />
+      <workItem from="1687780457096" duration="287000" />
+      <workItem from="1687785501290" duration="4686000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -217,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687766112593</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거">
+      <created>1687777494224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687777494224</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +248,7 @@
     <MESSAGE value="[feature] domain, repository 리펙토링&#10;ShowNearByWifi, SearchHistoryList, DownLoadWifiInfo, DeleteSearchHistory 구현" />
     <MESSAGE value="[feature] 기존 servlet으로 작성된 코드를 -&gt; jsp - controller, view로 분리하는 작업&#10;DownLoadWifiInfo.jsp, SearchHistoryList.jsp, ShowNearByWifi.jsp 구현" />
     <MESSAGE value="[feature] FrontControllerServlet 1차 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] FrontControllerServlet 1차 구현" />
+    <MESSAGE value="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거" />
   </component>
 </project>

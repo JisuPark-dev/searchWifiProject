@@ -1,20 +1,19 @@
 package com.example.zerobasewifimission.frontcontroller.controller;
 
 import com.example.zerobasewifimission.frontcontroller.Controller;
-import com.example.zerobasewifimission.frontcontroller.MyView;
+import com.example.zerobasewifimission.frontcontroller.ModelView;
 import com.example.zerobasewifimission.repository.WifiInfoRepository;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 public class DownLoadWifiInfo implements Controller {
     WifiInfoRepository wifiInfoRepository = WifiInfoRepository.getInstance();
 
     @Override
-    public MyView process(HttpServletRequest request, HttpServletResponse response) {
-        MyView view = new MyView("/WEB-INF/views/DownLoadWifiInfo.jsp");
+    public ModelView process(Map<String, String> paramMap) {
+        ModelView mv = new ModelView("DownLoadWifiInfo");
 
         try {
             int startIdx = 1;
@@ -42,7 +41,6 @@ public class DownLoadWifiInfo implements Controller {
         } catch (Exception e) {
             System.err.println("An error occurred during the Wi-Fi data processing: " + e.getMessage());
         }
-
-        return view;
+        return mv;
     }
 }
