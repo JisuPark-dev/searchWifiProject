@@ -1,6 +1,6 @@
 package com.example.zerobasewifimission.frontcontroller.controller;
 
-import com.example.zerobasewifimission.domain.Bookmark;
+import com.example.zerobasewifimission.domain.BookmarkGroup;
 import com.example.zerobasewifimission.frontcontroller.Controller;
 import com.example.zerobasewifimission.repository.BookmarkGroupRepository;
 
@@ -11,11 +11,11 @@ public class BookmarkGroupEditForm implements Controller {
     @Override
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
         String id = paramMap.get("id");
-        Bookmark oneBookmarkGroup = bookmarkGroupRepository.getOneBookmarkGroup(id);
+        BookmarkGroup oneBookmarkGroupGroup = bookmarkGroupRepository.getOneBookmarkGroup(id);
 
         model.put("no", id);
-        model.put("name", oneBookmarkGroup.getName());
-        model.put("BO", oneBookmarkGroup.getBO());
+        model.put("name", oneBookmarkGroupGroup.getName());
+        model.put("BO", oneBookmarkGroupGroup.getBO());
 
         return "BookmarkGroupEditForm";
     }

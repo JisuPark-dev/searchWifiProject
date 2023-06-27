@@ -16,7 +16,6 @@ public class DeleteSearchHistory implements Controller {
                 searchHistoryRepository.deleteById(id);
             } catch (Exception e) {
                 e.printStackTrace();
-//                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
         }
         return "DeleteSearchHistory";

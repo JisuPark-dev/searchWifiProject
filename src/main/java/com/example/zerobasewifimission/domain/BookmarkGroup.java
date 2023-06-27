@@ -5,17 +5,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Bookmark {
+public class BookmarkGroup {
     private int no;
     private String name;
     private int BO;
     private String created_time;
     private String modify_time;
 
-    public Bookmark() {
+    public BookmarkGroup() {
     }
 
-    public Bookmark(int no, String name, int BO, String created_time, String modify_time) {
+    public BookmarkGroup(int no, String name, int BO, String created_time, String modify_time) {
         this.no = no;
         this.name = name;
         this.BO = BO;

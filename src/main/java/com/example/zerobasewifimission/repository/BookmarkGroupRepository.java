@@ -1,7 +1,6 @@
 package com.example.zerobasewifimission.repository;
 
-import com.example.zerobasewifimission.domain.Bookmark;
-import com.example.zerobasewifimission.domain.WifiInfo;
+import com.example.zerobasewifimission.domain.BookmarkGroup;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class BookmarkGroupRepository {
             System.out.println("SQLite DB에 연결되었습니다.");
             java.util.Date date = new Date();
 
-            String sql = "INSERT INTO bookmark (name,BO,created_time) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO bookmarkgroup (name,BO,created_time) VALUES (?, ?, ?)";
             try {
                 //SQLite JDBC 드라이버를 로딩
                 Class.forName("org.sqlite.JDBC");
@@ -63,11 +62,11 @@ public class BookmarkGroupRepository {
         }
     }
 
-    public List<Bookmark> findAll() {
-        List<Bookmark> bookmarks = new ArrayList<>();
+    public List<BookmarkGroup> findAll() {
+        List<BookmarkGroup> bookmarkGroups = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(URL);
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT no, name, BO, created_time, modify_time FROM bookmark ORDER BY BO")) {
+             ResultSet rs = stmt.executeQuery("SELECT no, name, BO, created_time, modify_time FROM bookmarkgroup ORDER BY BO")) {
 
             while (rs.next()) {
                 int no = rs.getInt("no");
@@ -75,16 +74,16 @@ public class BookmarkGroupRepository {
                 int BO = rs.getInt("BO");
                 String created_time = rs.getString("created_time");
                 String modify_time = rs.getString("modify_time");
-                bookmarks.add(new Bookmark(no, name, BO, created_time, modify_time));
+                bookmarkGroups.add(new BookmarkGroup(no, name, BO, created_time, modify_time));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return bookmarks;
+        return bookmarkGroups;
     }
     public void deleteById(String id) {
         try (Connection conn = DriverManager.getConnection(URL);
-             PreparedStatement pstmt = conn.prepareStatement("delete from bookmark where no = ?")) {
+             PreparedStatement pstmt = conn.prepareStatement("delete from bookmarkgroup where no = ?")) {
 
             pstmt.setInt(1, Integer.parseInt(id));
             pstmt.executeUpdate();
@@ -95,15 +94,15 @@ public class BookmarkGroupRepository {
         }
     }
 
-    public Bookmark getOneBookmarkGroup(String id) {
-        Bookmark bookmarkGroup = null;
+    public BookmarkGroup getOneBookmarkGroup(String id) {
+        BookmarkGroup bookmarkGroup = null;
         try (Connection conn = DriverManager.getConnection(URL);
-             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bookmark WHERE no = ?")) {
+             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bookmarkgroup WHERE no = ?")) {
 
             pstmt.setString(1, id);
 
             try (ResultSet rs = pstmt.executeQuery()) {
-                bookmarkGroup = new Bookmark();
+                bookmarkGroup = new BookmarkGroup();
                 bookmarkGroup.setName(rs.getString("name"));
                 bookmarkGroup.setBO(rs.getInt("BO"));
                 bookmarkGroup.setCreated_time(rs.getString("created_time"));
@@ -121,7 +120,7 @@ public class BookmarkGroupRepository {
             System.out.println("SQLite DB에 연결되었습니다.");
             java.util.Date date = new Date();
 
-            String sql = "UPDATE bookmark SET name = ?, BO = ?, modify_time = ? WHERE no = ?";
+            String sql = "UPDATE bookmarkgroup SET name = ?, BO = ?, modify_time = ? WHERE no = ?";
             try {
                 //SQLite JDBC 드라이버를 로딩
                 Class.forName("org.sqlite.JDBC");

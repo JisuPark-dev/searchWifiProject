@@ -9,7 +9,6 @@ import java.util.Map;
 
 public class DownLoadWifiInfo implements Controller {
     WifiInfoRepository wifiInfoRepository = WifiInfoRepository.getInstance();
-
     @Override
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
         try {

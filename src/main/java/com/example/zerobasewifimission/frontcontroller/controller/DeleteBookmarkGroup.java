@@ -4,7 +4,6 @@ import com.example.zerobasewifimission.frontcontroller.Controller;
 import com.example.zerobasewifimission.repository.BookmarkGroupRepository;
 
 import java.util.Map;
-
 public class DeleteBookmarkGroup implements Controller {
     BookmarkGroupRepository bookmarkGroupRepository = BookmarkGroupRepository.getInstance();
     @Override
@@ -15,7 +14,6 @@ public class DeleteBookmarkGroup implements Controller {
                 bookmarkGroupRepository.deleteById(id);
             } catch (Exception e) {
                 e.printStackTrace();
-//                response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
         }
         return "DeleteBookmarkGroup";
