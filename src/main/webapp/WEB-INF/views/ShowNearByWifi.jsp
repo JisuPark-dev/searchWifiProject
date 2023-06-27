@@ -15,7 +15,7 @@
 <span>|</span>
 <a href="show-bookmark">북마크 보기</a>
 <span>|</span>
-<a href="manage-bookmark">북마크 그룹 관리</a>
+<a href="manage-bookmark-group">북마크 그룹 관리</a>
 <form action="show-nearbyWifi-20" method="post">
   LAT: <input type="number" step="any" id="lat" name="LAT"  />
   LNT: <input type="number" step="any" id="lnt" name="LNT"  />

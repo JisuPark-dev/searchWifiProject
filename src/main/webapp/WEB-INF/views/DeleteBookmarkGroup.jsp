@@ -4,7 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>show bookmark!</p>
-
+delete complete!
 </body>
 </html>

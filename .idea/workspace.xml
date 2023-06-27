@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음.">
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] WifiDetail 기능 구현 및 root경로 수정">
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/domain/Bookmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/BookmarkGroupEditComplete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/BookmarkGroupEditForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/BookmarkGroupSaveComplete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteBookmarkGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ManageBookmarkGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkGroupRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupEditForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupSaveComplete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupSaveForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DeleteBookmarkGroup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ManageBookmarkGroup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteSearchHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/SearchHistoryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowNearByWifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowNearByWifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ManageBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/BookmarkGroupSaveForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ManageBookmark.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupEditComplete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowBookmark.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowBookmark.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowNearByWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowNearByWifi.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/WifiDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/WifiDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +42,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -86,23 +100,73 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.76" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.76" ALTERNATIVE_JRE_ENABLED="false">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.90">
+    <configuration name="Tomcat 8.5.90" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.90" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : zerobase-wifi-mission-1.0-SNAPSHOT.war">
           <settings>
-            <option name="CONTEXT_PATH" value="/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="fc765f88-55de-4510-b09e-3830aaa4b1c8" />
+        <option name="BASE_DIRECTORY_NAME" value="c23a37c6-de4c-4d0d-b99b-6fd5da705670" />
+        <option name="HTTP_PORT" value="8082" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64625" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -125,6 +189,97 @@
         </option>
       </method>
     </configuration>
+    <configuration name="Tomcat 9.0.76" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.76" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="Gradle : com.example : zerobase-wifi-mission-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Gradle___com_example___zerobase_wifi_mission_1_0_SNAPSHOT_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="fc765f88-55de-4510-b09e-3830aaa4b1c8" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64577" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.example : zerobase-wifi-mission-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 9.0.76" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.90" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -189,6 +344,9 @@
       <workItem from="1687833068078" duration="87000" />
       <workItem from="1687834092554" duration="319000" />
       <workItem from="1687835396443" duration="674000" />
+      <workItem from="1687836757908" duration="10898000" />
+      <workItem from="1687849531812" duration="3902000" />
+      <workItem from="1687862534845" duration="6587000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -246,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687827991611</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[feature] WifiDetail 기능 구현 및 root경로 수정">
+      <created>1687845217382</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687845217382</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +426,7 @@
     <MESSAGE value="[feature] FrontControllerServlet 1차 구현" />
     <MESSAGE value="[feature] FrontControllerServlet 2차 구현 - MyView.java 구현 -&gt; dispatcher, forward() 중복 제거" />
     <MESSAGE value="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음." />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] FrontControllerServlet 3차 구현 - controller에서 servlet에 대한 의존성 제거, ModelView를 통해서 데이터 주고받음." />
+    <MESSAGE value="[feature] WifiDetail 기능 구현 및 root경로 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] WifiDetail 기능 구현 및 root경로 수정" />
   </component>
 </project>

@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>와이파이 정보 구하기</h1>
-        <button onclick="history.back()">Go Back</button>
+        <button onclick="history.back()">뒤로가기</button>
         <a href="/">홈</a>
         <span>|</span>
         <a href="search-history">위치 히스토리 목록</a>
@@ -14,7 +14,7 @@
         <span>|</span>
         <a href="show-bookmark">북마크 보기</a>
         <span>|</span>
-        <a href="manage-bookmark">북마크 그룹 관리</a>
+        <a href="manage-bookmark-group">북마크 그룹 관리</a>
         <p></p>
         <table>
             <tr>

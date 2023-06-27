@@ -15,8 +15,8 @@
 <span>|</span>
 <a href="front-controller/show-bookmark">북마크 보기</a>
 <span>|</span>
-<a href="front-controller/manage-bookmark">북마크 그룹 관리</a>
-<form action="front-controller/show-nearbyWifi-20" method="post">
+<a href="front-controller/manage-bookmark-group">북마크 그룹 관리</a>
+<form action="front-controller/show-nearbyWifi-20" method="post" >
   LAT: <input type="number" step="any" id="lat" name="LAT" />
   LNT: <input type="number" step="any" id="lnt" name="LNT" />
   <button type="submit">근처 와이파이 정보 보기</button>
