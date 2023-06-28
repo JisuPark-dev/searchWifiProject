@@ -1,21 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
         <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     </head>
     <body>
         <h1>와이파이 정보 구하기</h1>
-        <button onclick="history.back()">뒤로가기</button>
-        <a href="/">홈</a>
-        <span>|</span>
-        <a href="search-history">위치 히스토리 목록</a>
-        <span>|</span>
-        <a href="show-wifi">OPEN API 와이파이 정보 가져오기</a>
-        <span>|</span>
-        <a href="show-bookmark">북마크 보기</a>
-        <span>|</span>
-        <a href="manage-bookmark-group">북마크 그룹 관리</a>
+        <%@ include file="jspf/navigation.jspf"%>
         <p></p>
         <form action="create-bookmark">
             <select name ="bookmark-group">
@@ -23,80 +15,80 @@
                     <option value = "${bookmarkGroups.name}">${bookmarkGroups.name}</option>
                 </c:forEach>
             </select>
-<%--            ID, 북마크 이름, 와이파이명, 등록일자, 비고--%>
             <input type="hidden" id="wifi-name" name="wifi-name" value="${wifiDetail.name}">
             <input type="hidden" id="wifi-id" name="wifi-id" value="${wifiDetail.id}">
             <input type = "submit" value="북마크 추가하기">
         </form>
-        <table>
+        <table class="wifiDetailTable">
             <tr>
-                <td>거리</td>
-                <td>${distance}</td>
+                <td class="td1">거리</td>
+                <td class="td2">${distance}</td>
             </tr>
             <tr>
-                <td>관리번호</td>
-                <td>${wifiDetail.id}</td>
+                <td class="td1">관리번호</td>
+                <td class="td2">${wifiDetail.id}</td>
             </tr>
             <tr>
-                <td>자치구</td>
-                <td>${wifiDetail.region}</td>
+                <td class="td1">자치구</td>
+                <td class="td2">${wifiDetail.region}</td>
             </tr>
             <tr>
-                <td>와이파이명</td>
-                <td>${wifiDetail.name}</td>
+                <td class="td1">와이파이명</td>
+                <td class="td2">${wifiDetail.name}</td>
             </tr>
             <tr>
-                <td>도로명주소</td>
-                <td>${wifiDetail.address1}</td>
+                <td class="td1">도로명주소</td>
+                <td class="td2">${wifiDetail.address1}</td>
             </tr>
             <tr>
-                <td>상세주소</td>
-                <td>${wifiDetail.address2}</td>
+                <td class="td1">상세주소</td>
+                <td class="td2">${wifiDetail.address2}</td>
             </tr>
             <tr>
-                <td>설치위치(층)</td>
-                <td>${wifiDetail.floor}</td>
+                <td class="td1">설치위치(층)</td>
+                <td class="td2">${wifiDetail.floor}</td>
             </tr>
             <tr>
-                <td>설치유형</td>
-                <td>${wifiDetail.installType}</td>
+                <td class="td1">설치유형</td>
+                <td class="td2">${wifiDetail.installType}</td>
             </tr>
             <tr>
-                <td>설치기관</td>
-                <td>${wifiDetail.installMby}</td>
+                <td class="td1">설치기관</td>
+                <td class="td2">${wifiDetail.installMby}</td>
             </tr>
             <tr>
-                <td>서비스구분</td>
-                <td>${wifiDetail.serviceType}</td>
+                <td class="td1">서비스구분</td>
+                <td class="td2">${wifiDetail.serviceType}</td>
             </tr>
             <tr>
-                <td>망종류</td>
-                <td>${wifiDetail.cmcwr}</td>
+                <td class="td1">망종류</td>
+                <td class="td2">${wifiDetail.cmcwr}</td>
             </tr>
             <tr>
-                <td>설치연도</td>
-                <td>${wifiDetail.installYear}</td>
+                <td class="td1">설치연도</td>
+                <td class="td2">${wifiDetail.installYear}</td>
             </tr>
             <tr>
-                <td>실내외구분</td>
-                <td>${wifiDetail.inout}</td>
+                <td class="td1">실내외구분</td>
+                <td class="td2">${wifiDetail.inout}</td>
             </tr>
             <tr>
-                <td>WIFI접속환경</td>
-                <td>${wifiDetail.remars3}</td>
+                <td class="td1">WIFI접속환경</td>
+                <td class="td2">${wifiDetail.remars3}</td>
             </tr>
             <tr>
-                <td>X좌표</td>
-                <td>${wifiDetail.lat}</td>
+                <td class="td1">X좌표</td>
+                <td class="td2">${wifiDetail.lat}</td>
             </tr>
             <tr>
-                <td>Y좌표</td>
-                <td>${wifiDetail.lnt}</td>
+                <td class="td1">Y좌표</td>
+                <td class="td2">${wifiDetail.lnt}</td>
             </tr>
             <tr>
-                <td>작업일자</td>
-                <td>${wifiDetail.workTime}</td>
+                <td class="td1">작업일자</td>
+                <td class="td2">${wifiDetail.workTime}</td>
             </tr>
         </table>
+        <button onclick="history.back()">뒤로가기</button>
     </body>
 </html>

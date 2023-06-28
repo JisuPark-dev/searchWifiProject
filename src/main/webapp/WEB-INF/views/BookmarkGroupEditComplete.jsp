@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     </head>
     <body>
         북마크 그룹이 성공적으로 수정되었습니다!

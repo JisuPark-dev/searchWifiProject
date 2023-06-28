@@ -1,30 +1,21 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
     <head>
         <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     </head>
     <body>
         <h1>북마크 그룹 수정</h1>
-
-        <a href="/">홈</a>
-        <span>|</span>
-        <a href="search-history">위치 히스토리 목록</a>
-        <span>|</span>
-        <a href="download-wifi">OPEN API 와이파이 정보 가져오기</a>
-        <span>|</span>
-        <a href="show-bookmark">북마크 보기</a>
-        <span>|</span>
-        <a href="manage-bookmark-group">북마크 그룹 관리</a>
-
+        <%@ include file="jspf/navigation.jspf"%>
         <form action="bookmark-group-edit-complete" method="post" accept-charset="utf-8">
             <table>
                 <tr>
-                    <td>북마크 이름</td>
-                    <td><input type="text" id="name" name="name" value="${name}"/></td>
+                    <td class="td1">북마크 이름</td>
+                    <td class="td2"><input type="text" id="name" name="name" value="${name}"/></td>
                 </tr>
                 <tr>
-                    <td>북마크 순서</td>
-                    <td><input type="number" step="any" id="BO" name="BO" value="${BO}"/></td>
+                    <td class="td1">북마크 순서</td>
+                    <td class="td2"><input type="number" step="any" id="BO" name="BO" value="${BO}"/></td>
                     <input type="hidden" id="id" name = "id" value="${no}"/>
                 </tr>
             </table>
