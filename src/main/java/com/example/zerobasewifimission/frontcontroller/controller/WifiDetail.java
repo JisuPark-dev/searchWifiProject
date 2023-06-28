@@ -16,7 +16,6 @@ public class WifiDetail implements Controller {
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
         String id = paramMap.get("id");
         double distance = Double.parseDouble(paramMap.get("d"));
-        System.out.println("distance = " + distance);
         WifiInfo wifiDetail = wifiInfoRepository.getWifiDetail(id);
         List<BookmarkGroup> bookmarkGroups = bookmarkGroupRepository.findAll();
 

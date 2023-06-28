@@ -24,7 +24,7 @@
                 <tr>
                     <td>${bookmarks.id}</td>
                     <td>${bookmarks.bookmark_group_name}</td>
-                    <td>${bookmarks.wifi_name}</td>
+                    <td><a href = "wifi-detail?id=${wifi.id}&d=0">${bookmarks.wifi_name}<a/></td>
                     <td>${bookmarks.created_date}</td>
                     <td>
                         <button type='button' onclick='window.location.href="delete-bookmark?id=${bookmarks.id}"'>삭제</button>

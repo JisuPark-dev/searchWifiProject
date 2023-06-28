@@ -100,21 +100,24 @@ public class BookmarkRepository {
     public Bookmark getOneBookmark(String id) {
         Bookmark bookmark = null;
         try (Connection conn = DriverManager.getConnection(URL);
-             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bookmark WHERE id = ?")) {
+             PreparedStatement pstmt = conn.prepareStatement("SELECT bookmark.id, bookmarkgroup.name as bookmark_group_name, bookmark.wifi_name, bookmark.created_date FROM bookmark INNER JOIN bookmarkgroup ON bookmark.bookmark_group_id = bookmarkgroup.no WHERE bookmark.id = ?")) {
 
             pstmt.setString(1, id);
 
             try (ResultSet rs = pstmt.executeQuery()) {
-                bookmark = new Bookmark();
-                bookmark.setBookmark_group_name(rs.getString("bookmark_group_name"));
-                bookmark.setWifi_name(rs.getString("wifi_name"));
-                bookmark.setCreated_date(rs.getString("created_date"));
+                if (rs.next()) {
+                    bookmark = new Bookmark();
+                    bookmark.setBookmark_group_name(rs.getString("bookmark_group_name"));
+                    bookmark.setWifi_name(rs.getString("wifi_name"));
+                    bookmark.setCreated_date(rs.getString("created_date"));
+                }
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return bookmark;
     }
+
 
     public void deleteById(String id) {
         try (Connection conn = DriverManager.getConnection(URL);
