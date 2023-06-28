@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
         <title>Title</title>
@@ -16,6 +17,17 @@
         <span>|</span>
         <a href="manage-bookmark-group">북마크 그룹 관리</a>
         <p></p>
+        <form action="create-bookmark">
+            <select name ="bookmark-group">
+                <c:forEach var="bookmarkGroups" items="${bookmarkGroups}">
+                    <option value = "${bookmarkGroups.name}">${bookmarkGroups.name}</option>
+                </c:forEach>
+            </select>
+<%--            ID, 북마크 이름, 와이파이명, 등록일자, 비고--%>
+            <input type="hidden" id="wifi-name" name="wifi-name" value="${wifiDetail.name}">
+            <input type="hidden" id="wifi-id" name="wifi-id" value="${wifiDetail.id}">
+            <input type = "submit" value="북마크 추가하기">
+        </form>
         <table>
             <tr>
                 <td>거리</td>

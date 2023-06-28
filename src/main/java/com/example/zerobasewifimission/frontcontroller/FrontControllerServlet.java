@@ -22,6 +22,8 @@ public class FrontControllerServlet extends HttpServlet {
     public FrontControllerServlet() {
         controllerMap.put("/front-controller/delete", new DeleteSearchHistory());
         controllerMap.put("/front-controller/delete-bookmark-group", new DeleteBookmarkGroup());
+        controllerMap.put("/front-controller/delete-bookmark", new DeleteBookmark());
+        controllerMap.put("/front-controller/delete-bookmark-complete", new DeleteBookmarkComplete());
         controllerMap.put("/front-controller/edit-bookmark-group", new BookmarkGroupEditForm());
         controllerMap.put("/front-controller/bookmark-group-edit-complete", new BookmarkGroupEditComplete());
         controllerMap.put("/front-controller/download-wifi", new DownLoadWifiInfo());
@@ -29,6 +31,7 @@ public class FrontControllerServlet extends HttpServlet {
         controllerMap.put("/front-controller/show-nearbyWifi-20", new ShowNearByWifi());
         controllerMap.put("/front-controller/wifi-detail", new WifiDetail());
         controllerMap.put("/front-controller/show-bookmark", new ShowBookmark());
+        controllerMap.put("/front-controller/create-bookmark", new CreateBookmark());
         controllerMap.put("/front-controller/manage-bookmark-group", new ManageBookmarkGroup());
         controllerMap.put("/front-controller/bookmark-group-save-form", new BookmarkGroupSaveForm());
         controllerMap.put("/front-controller/bookmark-group-save-complete", new BookmarkGroupSaveComplete());

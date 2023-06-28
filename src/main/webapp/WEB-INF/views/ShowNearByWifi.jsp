@@ -11,7 +11,7 @@
     <span>|</span>
     <a href="search-history">위치 히스토리 목록</a>
     <span>|</span>
-    <a href="show-wifi">OPEN API 와이파이 정보 가져오기</a>
+    <a href="download-wifi">OPEN API 와이파이 정보 가져오기</a>
     <span>|</span>
     <a href="show-bookmark">북마크 보기</a>
     <span>|</span>
