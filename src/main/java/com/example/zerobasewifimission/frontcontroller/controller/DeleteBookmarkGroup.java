@@ -9,13 +9,7 @@ public class DeleteBookmarkGroup implements Controller {
     @Override
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
         String id = paramMap.get("id");
-        if (id != null && !id.isEmpty()) {
-            try {
-                bookmarkGroupRepository.deleteById(id);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        bookmarkGroupRepository.deleteById(id);
         return "DeleteBookmarkGroup";
     }
 }

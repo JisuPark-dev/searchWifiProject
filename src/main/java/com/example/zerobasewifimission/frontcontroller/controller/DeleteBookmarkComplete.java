@@ -11,7 +11,6 @@ public class DeleteBookmarkComplete implements Controller {
     @Override
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
         String bookmark_id = paramMap.get("id");
-        //bookmark 삭제하기 기능 구현
         bookmarkRepository.deleteById(bookmark_id);
         return "DeleteBookmarkComplete";
     }

@@ -10,14 +10,7 @@ public class DeleteSearchHistory implements Controller {
     @Override
     public String process(Map<String, String> paramMap,Map<String, Object> model)  {
         String id = paramMap.get("id"); // 요청 파라미터에서 id 값을 가져옵니다.
-
-        if (id != null && !id.isEmpty()) {
-            try {
-                searchHistoryRepository.deleteById(id);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        searchHistoryRepository.deleteById(id);
         return "DeleteSearchHistory";
     }
 }
