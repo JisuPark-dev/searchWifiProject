@@ -4,24 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] html 줄맞춤 + 필요없는 의존성코드 제거">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/domain/Bookmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/CreateBookmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DeleteBookmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/CreateBookmark.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DeleteBookmark.jsp" afterDir="false" />
+    <list default="true" id="b7609f00-4c2e-47c8-a224-45291eb820cd" name="Changes" comment="[feature] 기본 css 적용&#10;/css/style.css&#10;jspf파일로 중복있는 navgation bar 분리">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/FrontControllerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowBookmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/ShowBookmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/WifiDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/WifiDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/frontcontroller/controller/DownLoadWifiInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkGroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkGroupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/BookmarkRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/SearchHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/SearchHistoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/WifiInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission/repository/WifiInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/test.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupEditForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupEditForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupSaveForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/BookmarkGroupSaveForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DeleteBookmark.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DeleteBookmark.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DownLoadWifiInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/DownLoadWifiInfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ManageBookmarkGroup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ManageBookmarkGroup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowBookmark.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowBookmark.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/SearchHistoryList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/SearchHistoryList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowNearByWifi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ShowNearByWifi.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/WifiDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/WifiDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +41,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jspf" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/zerobasewifimission" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/db" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.90">
@@ -344,6 +347,10 @@
       <workItem from="1687849531812" duration="3902000" />
       <workItem from="1687862534845" duration="8298000" />
       <workItem from="1687917155690" duration="3953000" />
+      <workItem from="1687921116869" duration="27127000" />
+      <workItem from="1688003566610" duration="424000" />
+      <workItem from="1688003994605" duration="5136000" />
+      <workItem from="1688024289951" duration="10304000" />
     </task>
     <task id="LOCAL-00001" summary="[feature]first commit">
       <created>1687180237471</created>
@@ -422,7 +429,28 @@
       <option name="project" value="LOCAL" />
       <updated>1687870670198</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[feature] 북마크 연결관계 생각해서 수정 및 북마크 crud구현">
+      <created>1687925296900</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687925296900</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[feature] wifi detail에서 링크 구현하려다가 실패">
+      <created>1687932085900</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687932085900</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[feature] 기본 css 적용&#10;/css/style.css&#10;jspf파일로 중복있는 navgation bar 분리">
+      <created>1687939815857</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687939815857</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,6 +468,9 @@
     <MESSAGE value="[feature] WifiDetail 기능 구현 및 root경로 수정" />
     <MESSAGE value="[feature] bookmarkGroup 입력, 수정, 삭제 기능 구현" />
     <MESSAGE value="[feature] html 줄맞춤 + 필요없는 의존성코드 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature] html 줄맞춤 + 필요없는 의존성코드 제거" />
+    <MESSAGE value="[feature] 북마크 연결관계 생각해서 수정 및 북마크 crud구현" />
+    <MESSAGE value="[feature] wifi detail에서 링크 구현하려다가 실패" />
+    <MESSAGE value="[feature] 기본 css 적용&#10;/css/style.css&#10;jspf파일로 중복있는 navgation bar 분리" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature] 기본 css 적용&#10;/css/style.css&#10;jspf파일로 중복있는 navgation bar 분리" />
   </component>
 </project>

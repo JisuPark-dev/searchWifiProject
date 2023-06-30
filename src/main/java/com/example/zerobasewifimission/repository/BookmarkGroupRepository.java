@@ -3,9 +3,12 @@ package com.example.zerobasewifimission.repository;
 import com.example.zerobasewifimission.domain.BookmarkGroup;
 
 import java.sql.*;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class BookmarkGroupRepository {
     private static final String URL = "jdbc:sqlite:/Users/sudong/Desktop/제로베이스/wifi_mission/zerobase-wifi-mission/src/main/webapp/WEB-INF/db/publicwifi.sqlite3";
@@ -29,7 +32,19 @@ public class BookmarkGroupRepository {
         Connection connection = null;
         try {
             System.out.println("SQLite DB에 연결되었습니다.");
-            java.util.Date date = new Date();
+            DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
+            dfs.setWeekdays(new String[]{
+                    "unused",
+                    "일요일",
+                    "월요일",
+                    "화요일",
+                    "수요일",
+                    "목요일",
+                    "금요일",
+                    "토요일"
+            });
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
+            String dateStr = sdf.format(new Date());
 
             String sql = "INSERT INTO bookmarkgroup (name,BO,created_time) VALUES (?, ?, ?)";
             try {
@@ -43,7 +58,7 @@ public class BookmarkGroupRepository {
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
                 pstmt.setString(1, name);
                 pstmt.setInt(2, BO);
-                pstmt.setString(3, date.toString());
+                pstmt.setString(3, dateStr.toString());
 
                 pstmt.executeUpdate();
             } catch (SQLException e) {
@@ -118,7 +133,19 @@ public class BookmarkGroupRepository {
         Connection connection = null;
         try {
             System.out.println("SQLite DB에 연결되었습니다.");
-            java.util.Date date = new Date();
+            DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
+            dfs.setWeekdays(new String[]{
+                    "unused",
+                    "일요일",
+                    "월요일",
+                    "화요일",
+                    "수요일",
+                    "목요일",
+                    "금요일",
+                    "토요일"
+            });
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
+            String dateStr = sdf.format(new Date());
 
             String sql = "UPDATE bookmarkgroup SET name = ?, BO = ?, modify_time = ? WHERE no = ?";
             try {
@@ -132,7 +159,7 @@ public class BookmarkGroupRepository {
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
                 pstmt.setString(1, name);
                 pstmt.setInt(2, BO);
-                pstmt.setString(3, date.toString());
+                pstmt.setString(3, dateStr.toString());
                 pstmt.setInt(4, no);
 
                 pstmt.executeUpdate();

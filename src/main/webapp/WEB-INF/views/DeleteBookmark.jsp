@@ -12,7 +12,7 @@
                   return response.text();
                 })
                 .then(data => {
-                  alert('Row with id ' + id + ' was successfully deleted.');
+                  alert(id + '번째 북마크가 성공적으로 삭제되었습니다.');
                   window.location.href='http://localhost:8082/front-controller/show-bookmark'; // This line has been changed
                 })
                 .catch(error => {
@@ -28,16 +28,16 @@
     <p>정말로 북마크 삭제하실래요 ?</p>
       <table>
         <tr>
-          <td>북마크 그룹 이름</td>
-          <td>${bookmark.bookmark_group_name}</td>
+          <td class="td1">북마크 그룹 이름</td>
+          <td class="td2">${bookmark.bookmark_group_name}</td>
         </tr>
         <tr>
-          <td>와이파이명</td>
-          <td>${bookmark.wifi_name}</td>
+          <td class="td1">와이파이명</td>
+          <td class="td2">${bookmark.wifi_name}</td>
         </tr>
         <tr>
-          <td>등록일자</td>
-          <td>${bookmark.created_date}</td>
+          <td class="td1">등록일자</td>
+          <td class="td2">${bookmark.created_date}</td>
         </tr>
       </table>
         <div>

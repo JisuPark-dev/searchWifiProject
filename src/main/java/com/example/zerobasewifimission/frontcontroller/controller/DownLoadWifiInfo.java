@@ -6,37 +6,40 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class DownLoadWifiInfo implements Controller {
     WifiInfoRepository wifiInfoRepository = WifiInfoRepository.getInstance();
+
     @Override
     public String process(Map<String, String> paramMap, Map<String, Object> model) {
-        try {
-            int startIdx = 1;
-            int endIdx = 1000;
-            int cnt = 1;
-            String jsonString;
+        String oneWifiInfoFromApi = wifiInfoRepository.getWifiInfoFromApi(1, 1);
+        int totalCount = wifiInfoRepository.getTotalCount(oneWifiInfoFromApi);
+        model.put("totalCount", totalCount);
 
-            while (!(jsonString = wifiInfoRepository.getWifiInfoFromApi(startIdx, endIdx)).equals("failed to get response")) {
-                JSONArray rows;
-                try {
-                    //받은 데이터 파싱하기
-                    rows = wifiInfoRepository.parseWifiInfo(jsonString);
-                } catch (JSONException e) {
-                    System.err.println("Error while parsing JSON data: " + e.getMessage());
-                    break;
-                }
+        for (int i = 0; ; i++) {
+            final int startIdx = 1 + i * 1000;
+            final int endIdx = 1000 + i * 1000;
+            final int cnt = 1 + i * 1000;
 
-                //db에 데이터 저장
-                wifiInfoRepository.saveWifiInfo(cnt, rows);
+            CompletableFuture.supplyAsync(() -> wifiInfoRepository.getWifiInfoFromApi(startIdx, endIdx))
+                    .thenApply(jsonString -> {
+                        if (jsonString.equals("failed to get response")) {
+                            throw new RuntimeException("Failed to get response");
+                        }
+                        return wifiInfoRepository.parseWifiInfo(jsonString);
+                    })
+                    .thenAccept(rows -> wifiInfoRepository.saveWifiInfo(cnt, rows))
+                    .exceptionally(ex -> {
+                        System.err.println("An error occurred during the Wi-Fi data processing: " + ex.getMessage());
+                        return null;
+                    });
 
-                startIdx += 1000;
-                endIdx += 1000;
-                cnt += 1000;
-            }
-        } catch (Exception e) {
-            System.err.println("An error occurred during the Wi-Fi data processing: " + e.getMessage());
+            if (i > totalCount / 1000) break;
         }
+
         return "DownLoadWifiInfo";
     }
 }
+

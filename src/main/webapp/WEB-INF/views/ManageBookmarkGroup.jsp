@@ -12,7 +12,7 @@
                         return response.text();
                     })
                     .then(data => {
-                        alert('Row with id ' + id + ' was successfully deleted.');
+                        alert(id + '번째 북마크 그룹이 성공적으로 삭제되었습니다.');
                         location.reload();
                     })
                     .catch(error => {

@@ -8,7 +8,6 @@
     <body>
         <h1>와이파이 정보 구하기</h1>
         <%@ include file="jspf/navigation.jspf"%>
-        <p></p>
         <form action="create-bookmark">
             <select name ="bookmark-group">
                 <c:forEach var="bookmarkGroups" items="${bookmarkGroups}">
@@ -21,8 +20,8 @@
         </form>
         <table class="wifiDetailTable">
             <tr>
-                <td class="td1">거리</td>
-                <td class="td2">${distance}</td>
+                <td class="td1">거리(km)</td>
+                <td class="td2">${distance}(km)</td>
             </tr>
             <tr>
                 <td class="td1">관리번호</td>

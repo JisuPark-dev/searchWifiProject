@@ -12,8 +12,8 @@
 
     <div class="location">
       <form action="show-nearbyWifi-20" method="post">
-        LAT: <input type="number" step="any" id="lat" name="LAT"  />
-        LNT: <input type="number" step="any" id="lnt" name="LNT"  />
+        LAT: <input type="number" step="any" id="lat" name="LAT" required/>
+        LNT: <input type="number" step="any" id="lnt" name="LNT" required/>
         <button type="submit">근처 와이파이 정보 보기</button>
       </form>
       <button type="button" onclick="getLocation()">내 위치 가져오기</button>
@@ -23,7 +23,7 @@
 
     <table border='17'>
       <tr>
-        <th>거리</th>
+        <th>거리(km)</th>
         <th>관리번호</th>
         <th>자치구</th>
         <th>와이파이명</th>
@@ -43,7 +43,7 @@
       </tr>
     <c:forEach var="wifi" items="${wifiInfoList}">
       <tr>
-        <td>${wifi.distance}</td>
+        <td>${wifi.distance}(km)</td>
         <td>${wifi.id}</td>
         <td>${wifi.region}</td>
         <td><a href = "wifi-detail?id=${wifi.id}&d=${wifi.distance}">${wifi.name}<a/></td>
@@ -75,6 +75,17 @@
         document.getElementById('lat').value = position.coords.latitude;
         document.getElementById('lnt').value = position.coords.longitude;
       }
+    </script>
+    <script>
+      document.getElementById("wifiForm").addEventListener("submit", function(event){
+        var latInput = document.getElementById("lat");
+        var lntInput = document.getElementById("lnt");
+
+        if(!latInput.value || !lntInput.value) {
+          event.preventDefault();  // prevent form submission
+          alert('모든 필드에 값을 입력해 주세요.');  // display a warning
+        }
+      });
     </script>
   </body>
 </html>

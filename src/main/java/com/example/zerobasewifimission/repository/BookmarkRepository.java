@@ -4,9 +4,12 @@ import com.example.zerobasewifimission.domain.Bookmark;
 import com.example.zerobasewifimission.domain.BookmarkGroup;
 
 import java.sql.*;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class BookmarkRepository {
     private static final String URL = "jdbc:sqlite:/Users/sudong/Desktop/제로베이스/wifi_mission/zerobase-wifi-mission/src/main/webapp/WEB-INF/db/publicwifi.sqlite3";
@@ -31,7 +34,19 @@ public class BookmarkRepository {
         Connection connection = null;
         try {
             System.out.println("SQLite DB에 연결되었습니다.");
-            java.util.Date date = new Date();
+            DateFormatSymbols dfs = new DateFormatSymbols(Locale.KOREAN);
+            dfs.setWeekdays(new String[]{
+                    "unused",
+                    "일요일",
+                    "월요일",
+                    "화요일",
+                    "수요일",
+                    "목요일",
+                    "금요일",
+                    "토요일"
+            });
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd '('E')' HH:mm:ss", dfs);
+            String dateStr = sdf.format(new Date());
 
             String sql = "SELECT no FROM bookmarkgroup WHERE name = ?";
             int bookmarkGroupId;
@@ -55,7 +70,7 @@ public class BookmarkRepository {
                 pstmt = connection.prepareStatement(sql);
                 pstmt.setInt(1, bookmarkGroupId);
                 pstmt.setString(2, wifiName);
-                pstmt.setString(3, date.toString());
+                pstmt.setString(3, dateStr.toString());
 
                 pstmt.executeUpdate();
             } catch (ClassNotFoundException | SQLException e) {

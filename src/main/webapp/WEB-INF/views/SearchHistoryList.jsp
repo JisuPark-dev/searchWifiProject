@@ -11,7 +11,7 @@
                         return response.text();
                     })
                     .then(data => {
-                        alert('Row with id ' + id + ' was successfully deleted.');
+                        alert(id + '번째 위치 검색 기록이 성공적으로 삭제되었습니다.');
                         location.reload();
                     })
                     .catch(error => {

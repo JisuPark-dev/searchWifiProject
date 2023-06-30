@@ -19,9 +19,9 @@
 <a href="front-controller/manage-bookmark-group">북마크 그룹 관리</a>
 </nav>
 <div class="location">
-  <form action="front-controller/show-nearbyWifi-20" method="post" >
-    LAT: <input type="number" step="any" id="lat" name="LAT" />
-    LNT: <input type="number" step="any" id="lnt" name="LNT" />
+  <form id="wifiInfo" action="front-controller/show-nearbyWifi-20" method="post" >
+    LAT: <input type="number" step="any" id="lat" name="LAT" required/>
+    LNT: <input type="number" step="any" id="lnt" name="LNT" required/>
     <button type="submit">근처 와이파이 정보 보기</button>
   </form>
   <button onclick="getLocation()">내 위치 가져오기</button>
@@ -60,6 +60,17 @@
     document.getElementById('lat').value = position.coords.latitude;
     document.getElementById('lnt').value = position.coords.longitude;
   }
+</script>
+<script>
+  document.getElementById("wifiForm").addEventListener("submit", function(event){
+    var latInput = document.getElementById("lat");
+    var lntInput = document.getElementById("lnt");
+
+    if(!latInput.value || !lntInput.value) {
+      event.preventDefault();  // prevent form submission
+      alert('모든 필드에 값을 입력해 주세요.');  // display a warning
+    }
+  });
 </script>
 </body>
 </html>
