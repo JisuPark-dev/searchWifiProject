@@ -1,4 +1,4 @@
-# searchWifiProject
+# SearchWifiProject
 - 주제: 내 주변 공공 와이파이 찾기 서비스
 - 개인프로젝트
 - 순수 자바 프로젝트
